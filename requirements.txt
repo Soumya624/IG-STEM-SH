@@ -5,3 +5,4 @@ joblib==0.14.1
 matplotlib==3.8.3
 numpy==2.0.0
 opencv_python==4.10.0.82
+Gunicorn
