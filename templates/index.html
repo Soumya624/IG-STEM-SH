@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>VoiceVision: Object Recognition for the Blind</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+    <link
+      href="../static/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="../static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="../static/css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <section id="hero">
+      <div class="hero-container">
+        <h1>Welcome to VoiceVision</h1>
+        <h2>Please, Upload an Image to Check!</h2>
+        <form method="post" enctype="multipart/form-data">
+          <div class="row no-gutters">
+            <div class="col-md-6 form-group pr-md-1">
+              <input type="file" name="file" />
+            </div>
+            <div class="col-md-6 form-group pr-md-1">
+              <input type="submit" value="Upload" />
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+    {% if uploaded_image %}
+    <main id="main">
+      <section id="why-us" class="why-us section-bg">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 col-md-6 d-flex align-items-stretch">
+              <div class="card">
+                <img
+                  src="{{ url_for('static', filename='uploads/' ~ uploaded_image.split('/')[-1]) }}"
+                  alt="Uploaded Image"
+                  class="card-img-top"
+                />
+                <div class="card-icon">
+                  <i class="bx bx-book-reader"></i>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title"><a href="">Uploaded Image</a></h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 d-flex align-items-stretch">
+              <div class="card">
+                <img
+                  src="{{ url_for('static', filename='uploads/' ~ result_image.split('/')[-1]) }}"
+                  alt="Result Image"
+                  class="card-img-top"
+                />
+                <div class="card-icon">
+                  <i class="bx bx-calendar-edit"></i>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title"><a href="">Resulted Image</a></h5>
+                </div>
+              </div>
+            </div>
+            {% if audio_path %}
+            <audio controls>
+              <source
+                src="{{ url_for('serve_audio', filename=audio_path.split('/')[-1]) }}"
+                type="audio/mpeg"
+              />
+              Your browser does not support the audio element.
+            </audio>
+            {% endif %}
+          </div>
+        </div>
+      </section>
+    </main>
+    {% endif %}
+    <footer id="footer">
+      <div class="container">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Soumya Tarafder</span></strong
+          >. All Rights Reserved
+        </div>
+        <div class="credits">Designed in Figma</div>
+      </div>
+    </footer>
+
+    <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/main.js"></script>
+  </body>
+</html>
