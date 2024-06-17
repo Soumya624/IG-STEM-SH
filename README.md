@@ -10,8 +10,6 @@ VoiceVision is an assistive technology application designed to empower individua
 
 ## Getting Started
 
-### Installation
-
 1. Clone the Repository: git clone [https://github.com/Soumya624/VoiceVision.git](https://github.com/Soumya624/IG-STEM-SH.git)
 2. Install Dependencies: pip install -r requirements.txt
 3. Run the Application: python app.py
