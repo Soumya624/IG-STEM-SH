@@ -5,7 +5,7 @@ VoiceVision is an assistive technology application designed to empower individua
 ## Key Features
 
 - **Image Processing**: Utilizes OpenCV for efficient image manipulation and feature extraction.
-- **Object Detection**: Employs the YOLO algorithm for accurate identification of objects in camera frames.
+- **Object Detection**: Employs the YOLO algorithm for accurate identification of objects in images.
 - **Text-to-Speech Integration**: Converts object descriptions into natural-sounding audio using the gTTS library.
 
 ## Getting Started
